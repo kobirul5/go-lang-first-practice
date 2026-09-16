@@ -29,10 +29,20 @@ func main(){
 
 
 	// constant
-	const pi = 3.14
+	// const pi = 3.14
+	//  fmt.Println(pi)
 
 
+	var age int
+	fmt.Println(age)//0
 
-	 fmt.Println(pi)
 
+	var name string
+	fmt.Println(name)//""
+
+	var isAdmin bool
+	fmt.Println(isAdmin)//false
+
+	var score float64
+	fmt.Println(score)//false
 }
