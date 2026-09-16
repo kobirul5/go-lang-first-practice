@@ -4,6 +4,11 @@ import "fmt"
 
 //  isAdmin := true // wrong way, because short way not working out of main function
 
+
+func makeCoffee(kind string){
+	fmt.Printf("maing %s coffee...\n" , kind)
+}
+
 func main(){
 	
 	// fmt.Println("Hello, World!")
@@ -33,16 +38,21 @@ func main(){
 	//  fmt.Println(pi)
 
 
-	var age int
-	fmt.Println(age)//0
+	// var age int
+	// fmt.Println(age)//0
 
 
-	var name string
-	fmt.Println(name)//""
+	// var name string
+	// fmt.Println(name)//""
 
-	var isAdmin bool
-	fmt.Println(isAdmin)//false
+	// var isAdmin bool
+	// fmt.Println(isAdmin)//false
 
-	var score float64
-	fmt.Println(score)//false
+	// var score float64
+	// fmt.Println(score)//false
+
+	//basic function
+	makeCoffee("black")
+	makeCoffee("cold")
+
 }
