@@ -4,7 +4,8 @@ import "fmt"
 func main(){
 
 	day := "Monday"
-	switch day {
+
+	switch day { // target variable
 	case "Monday":
 		fmt.Println("Today is Monday.")
 	case "Tuesday":
@@ -19,6 +20,16 @@ func main(){
 		fmt.Println("It's the weekend!")
 	}
 
+	// normal switch statement
+	age := 70
+	switch {
+	case age < 18:
+		fmt.Println("You are a minor.")
+	case age >= 18 && age < 65:
+		fmt.Println("You are an adult.")
+	default:
+		fmt.Println("You are a senior citizen.")
+	}
 
 
 }
