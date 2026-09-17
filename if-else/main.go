@@ -14,7 +14,8 @@ func main() {
 	}
 
 	// if-else scope example
-
+	score := 85
+	fmt.Println("outside if-else scope, score is:", score)
 
 	if score:=50; score >= 90 { // if-else scope example
 		fmt.Println("You got an A!")
