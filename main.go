@@ -64,19 +64,37 @@ package main
 
 import "fmt"
 
-func main() {
+// func main() {
 
-	// anonymous function
-	coffee := func() {
-		fmt.Println("I like coffee")
+// 	// anonymous function
+// 	coffee := func() {
+// 		fmt.Println("I like coffee")
+// 	}
+
+// 	// calling the anonymous function
+// 	coffee()
+
+// 	//immediately invoked function expression (IIFE)
+// 	func(coffeeType string) {
+// 		fmt.Println("I like " + coffeeType)
+// 	}("tea")
+
+// }
+
+// 2nd class
+func main() {
+	//scope
+
+	sugar := 5 // sugar is only accessible within this function
+
+	makeCoffee := func() {
+		sugar := 10 // sugar is only accessible within this function
+		fmt.Println("I like coffee with", sugar, "sugar", "inside print")
 	}
 
-	// calling the anonymous function
-	coffee()
+	fmt.Println("I like coffee with", sugar, "sugar", "outside print")
 
-	//immediately invoked function expression (IIFE)
-	func(coffeeType string) {
-		fmt.Println("I like " + coffeeType)
-	}("tea")
+	makeCoffee()
+
 
 }
