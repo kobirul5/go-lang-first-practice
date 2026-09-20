@@ -20,14 +20,19 @@ func main() {
 	// }
 
 	// break and continue 
-	for i := 0; i <= 10; i++ {
-		if i == 5 {
-			continue
-		}
-		// if i == 8 {
-		// 	break
-		// }
-		makeCoffee(i)
-	}
+	// for i := 0; i <= 10; i++ {
+	// 	if i == 5 {
+	// 		continue
+	// 	}
+	// 	// if i == 8 {
+	// 	// 	break
+	// 	// }
+	// 	makeCoffee(i)
+	// };
+
+	// infinite loop
+	// for {
+	// 	makeCoffee(1)
+	// }
 
 }
