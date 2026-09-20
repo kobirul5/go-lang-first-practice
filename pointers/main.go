@@ -11,4 +11,10 @@ func main(){
 	fmt.Println(a)
 	fmt.Println(p)
 	fmt.Println(*p)
+
+	*p = 42
+
+	fmt.Println(a)
+	fmt.Println(p)
+	fmt.Println(*p)
 }
