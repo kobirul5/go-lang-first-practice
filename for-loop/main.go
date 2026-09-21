@@ -31,8 +31,8 @@ func main() {
 	// };
 
 	// infinite loop
-	// for {
-	// 	makeCoffee(1)
-	// }
 
+	// receiver function
+	
+ 
 }
