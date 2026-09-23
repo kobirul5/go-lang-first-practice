@@ -25,4 +25,16 @@ func main() {
 	}
 	fmt.Println(string(rawJson))
 
+
+	var person2 Person
+	jsonData := `{"name":"Jane Smith","age":25,"city":"Los Angeles"}`
+
+	error := json.Unmarshal([]byte(jsonData), &person2)
+
+	if error != nil {
+		fmt.Println("Error unmarshalling JSON:", error)
+	}
+
+	fmt.Println(person2)
+
 }
