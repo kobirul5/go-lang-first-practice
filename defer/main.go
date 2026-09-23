@@ -8,13 +8,18 @@ func deferredFunction(result int) {
 
 }
 
-func exampleDefer() {
+func exampleDefer() int{
 
 	result := 10
 	defer deferredFunction(result)
 	fmt.Println("I am from exampleDefer function and result is ", result)
 
+	result += 20
+
+	return result 
+
 }
+
 
 func main() {
 	defer fmt.Println("I am from Deferred print call ")
