@@ -36,4 +36,7 @@ func main() {
 	fmt.Println("Multiplication:", calc3)
 	fmt.Println("Division:", calc4)
 
+
+	
+
 }
