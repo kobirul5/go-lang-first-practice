@@ -26,6 +26,15 @@ func getWorkDayStatus(day DayOfWeek) string {
 
 }
 
+
+type officeStatus string
+
+const (
+	Open   officeStatus = "Open"
+	Closed officeStatus = "Closed"
+)
+
+
 func main() {
 	fmt.Println(getWorkDayStatus(Monday)) // Output: Workday
 }
