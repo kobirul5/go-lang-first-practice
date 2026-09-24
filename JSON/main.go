@@ -36,5 +36,9 @@ func main() {
 	}
 
 	fmt.Println(person2)
+	// Output:
+	// {Jane Smith 25 Los Angeles}
+	// Output:
+	// {"name":"John Doe","age":30,"city":"New York"}
 
 }
