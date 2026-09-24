@@ -24,4 +24,8 @@ func main() {
 
 	println(myDog.Speak())
 	println(myCat.Speak())
+
+	// Output:
+	// Woof!
+	// Meow!
 }
