@@ -7,13 +7,20 @@ import (
 
 func main() {
 
-
 	var startTime = time.Now()
 
 	// concurrency
-	uploadFile()
-	saveToDb()
-	sendEmail()
+	// uploadFile()
+	// saveToDb()
+	// sendEmail()
+
+	// concurrency
+	go uploadFile()
+	go saveToDb()
+	go sendEmail()
+
+	time.Sleep(4* time.Second)
+
 
 	fmt.Println("all task completed ")
 	fmt.Println("Total time taken: ", time.Since(startTime))
