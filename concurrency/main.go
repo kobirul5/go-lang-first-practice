@@ -45,3 +45,15 @@ func sendEmail() {
 	time.Sleep(3 * time.Second)
 	fmt.Println("email sent ")
 }
+
+
+// Output:
+// uploading file
+// saving to database
+// sending email
+// file upload done
+// data saved to database
+// email sent
+// all task completed
+// Total time taken: 3.000123456s	
+
