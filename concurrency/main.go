@@ -2,8 +2,15 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
+
+//waitgroup is used to wait for a collection of goroutines to finish executing
+
+
+var wg sync.WaitGroup
+
 
 func main() {
 
@@ -15,11 +22,15 @@ func main() {
 	// sendEmail()
 
 	// concurrency
+	wg.Add(1)
 	go uploadFile()
+	wg.Add(1)
 	go saveToDb()
+	wg.Add(1)
 	go sendEmail()
 
-	time.Sleep(4* time.Second)
+	// time.Sleep(4* time.Second)
+	wg.Wait() // wait for all the goroutines to finish executing
 
 
 	fmt.Println("all task completed ")
@@ -31,6 +42,7 @@ func uploadFile() {
 	fmt.Println("uploading file")
 	time.Sleep(3 * time.Second)
 	fmt.Println("file upload done ")
+	wg.Done() // mark the goroutine as done
 }
 
 func saveToDb() {
@@ -38,12 +50,14 @@ func saveToDb() {
 	fmt.Println("saving to database")
 	time.Sleep(3 * time.Second)
 	fmt.Println("data saved to database ")
+	wg.Done() // mark the goroutine as done
 }
 func sendEmail() {
 	// code to send email
 	fmt.Println("sending email")
 	time.Sleep(3 * time.Second)
 	fmt.Println("email sent ")
+	wg.Done() // mark the goroutine as done
 }
 
 
