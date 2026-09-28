@@ -28,8 +28,8 @@ func increment() {
 
 
 	mu.Lock()
+	defer mu.Unlock()
 	counter = counter+1
-	mu.Unlock()
 
 }
 
