@@ -11,7 +11,9 @@ func main(){
 
 	var ch = make(chan string)
 	go UploadFile(ch)
-	
+	fileUrl := <-ch
+
+	fmt.Println(fileUrl)
 }
 
 
