@@ -1,8 +1,17 @@
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
+
+	result, err := divide(10, 0)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(result)
 
 }
 
@@ -13,8 +22,5 @@ func divide(a int, b int) (int, error) {
 		return 0, errors.New("cannot divide by zero")
 	}
 
-	
-
-	
 	return a / b, nil
 }
