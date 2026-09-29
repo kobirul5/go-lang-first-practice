@@ -1,15 +1,20 @@
 package main
 
+import "errors"
 
+func main() {
 
-func main(){
-	
 }
 
-func divide(a int, b int)(int, error){
+func divide(a int, b int) (int, error) {
 
+	// how to use error in go
+	if b == 0 {
+		return 0, errors.New("cannot divide by zero")
+	}
 
+	
 
-
-	return a / b , nil
+	
+	return a / b, nil
 }
