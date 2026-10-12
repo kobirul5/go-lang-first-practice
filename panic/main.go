@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 // doSomting demonstrates how panic works in Go.
 // 'panic' is a built-in function that stops the normal execution flow of the current goroutine.
@@ -29,12 +32,29 @@ func doSomting() {
 	// fmt.Println("Inside doSomting: this line will never run.")
 }
 
+// demonstrateFatal shows how log.Fatal works.
+// Key difference from panic:
+// - log.Fatal() prints the message with timestamp and immediately calls os.Exit(1).
+// - CRITICAL: log.Fatal() DOES NOT run deferred (defer) functions!
+func demonstrateFatal() {
+	defer func() {
+		// WARNING: This will NOT run when log.Fatal is called!
+		fmt.Println("This defer will NEVER execute because log.Fatal calls os.Exit directly!")
+	}()
+
+	fmt.Println("Inside demonstrateFatal: about to call log.Fatal...")
+	log.Fatal("Fatal error occurred! Program exits immediately.")
+}
+
 func main() {
-	fmt.Println("Inside main: calling doSomting()...")
+	// 1. Uncomment this to see panic & recover in action:
+	// fmt.Println("--- Testing Panic ---")
+	// doSomting()
 
-	// Calling the function that triggers the panic
-	doSomting()
+	// 2. Testing log.Fatal():
+	fmt.Println("--- Testing log.Fatal ---")
+	demonstrateFatal()
 
-	// This line will NEVER be reached because the program crashes during doSomting()
+	// This line will never execute after log.Fatal
 	fmt.Println("Inside main: completed successfully.")
 }
