@@ -12,6 +12,16 @@ import "fmt"
 func doSomting() {
 	fmt.Println("Inside doSomting: starting execution...")
 
+	// Deferred functions always run when the surrounding function exits,
+	// even if the exit is caused by a panic.
+	defer func() {
+		fmt.Println("Deferred function executed inside doSomting!")
+		r := recover()
+		if r != nil {
+			fmt.Println("Recovered from panic:", r)
+		}
+	}()
+
 	// Panic should generally be reserved for unrecoverable errors (e.g., critical misconfiguration, nil pointer).
 	panic("Something went wrong!")
 
